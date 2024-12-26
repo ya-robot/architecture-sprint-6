@@ -1,0 +1,30 @@
+schema {
+    query: Query
+}
+
+type Client {
+    id: String!
+    name: String!
+    age: Int
+}
+
+type Document {
+    id: String!
+    type: String!
+    number: String!
+    issueDate: String!
+    expiryDate: String!
+}
+
+type Relative {
+    id: String!
+    relationType: String!
+    name: String!
+    age: Int
+}
+
+type Query {
+    getClient(id: String!): Client
+    getClientDocuments(id: String!): [Document]
+    getClientRelatives(id: String!): [Relative]
+}
